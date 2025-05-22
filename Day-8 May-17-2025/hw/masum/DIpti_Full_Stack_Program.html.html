@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIpti Full Stack Web Development</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav button {
+            margin: 0 5px;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        nav button:hover {
+            background-color: #0056b3;
+        }
+        .hero img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .team, .syllabus, .testimonials {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .member {
+            width: 30%;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+        .member img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form input, form textarea {
+            width: 90%;
+            max-width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #007bff;
+            margin: 20px;
+            padding: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="a692b202-5dce-4b25-9ad7-4a406aa6fbaa.webp" alt="DIpti Logo" width="100">
+            <nav>
+                <button>Home</button>
+                <button>Course</button>
+                <button>Syllabus</button>
+                <button>Contact</button>
+            </nav>
+        </header>
+
+        <div class="hero">
+            <img src="77cc8da0-704d-46a3-bb76-90a16374eea2.png" alt="Banner">
+        </div>
+
+        <section class="syllabus">
+            <h2>Syllabus Overview</h2>
+            <table>
+                <tr>
+                    <th>Module</th>
+                    <th>Topics</th>
+                </tr>
+                <tr>
+                    <td>Module 1</td>
+                    <td>HTML5, CSS3 Basics</td>
+                </tr>
+                <tr>
+                    <td>Module 2</td>
+                    <td>JavaScript Fundamentals</td>
+                </tr>
+                <tr>
+                    <td>Module 3</td>
+                    <td>Advanced JavaScript, ES6+</td>
+                </tr>
+                <tr>
+                    <td>Module 4</td>
+                    <td>React.js & Component-based Design</td>
+                </tr>
+                <tr>
+                    <td>Module 5</td>
+                    <td>Node.js, Express, MongoDB</td>
+                </tr>
+                <tr>
+                    <td>Module 6</td>
+                    <td>Final Project & Deployment</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Students Say</h2>
+            <blockquote>
+                "This course gave me real-world skills. Now I work as a full stack developer!"<br>– Arman, 2024 Graduate
+            </blockquote>
+            <blockquote>
+                "Great instructors and hands-on projects. Highly recommended!"<br>– Shila, Web Enthusiast
+            </blockquote>
+        </section>
+
+        <section class="contact">
+            <h2>Contact DIpti</h2>
+            <form>
+                <input type="text" placeholder="Your Name"><br>
+                <input type="email" placeholder="Your Email"><br>
+                <textarea rows="4" placeholder="Your Message"></textarea><br>
+                <input type="submit" value="Send">
+            </form>
+
+            <section class="instructor">
+<h2>Meet Our Instructor</h2>
+<img src="instructor.jpg" alt="Instructor Photo" style="width:200px; border-radius:10px; display:block; margin:auto;">
+</section>
+
+<address>
+<p><strong>Institute Address:</strong><br>
+4/2, Daffodil Plaza, Sobhanbagh Mirpur Rd, Dhaka 1207, Bangladesh<br>
+Call: +88 01713493288<br>
+Email: info@dipti.com.bd</p>
+</address>
+        </section>
+
+        <div class="footer">
+            &copy; 2025 DIpti - Daffodil International Professional Training Institute. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

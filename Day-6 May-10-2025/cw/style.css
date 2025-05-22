@@ -1,0 +1,15 @@
+.mujahid {
+    width: 300px;
+    height: 200px;
+    background: green;
+    margin: 20px auto;
+    display: flex;
+}
+
+.soyeb {
+    width: 140px;
+    height: 140px;
+    background: red;
+    margin: auto;
+    border-radius: 50%;
+}
