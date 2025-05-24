@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-1 {
+    width: 300px;
+    height: 200px;
+    background-color: #f00;
+    margin: 20px auto;
+}
+
+.bg-2 {
+    width: 300px;
+    height: 200px;
+    background-image: url("../images/bird.avif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hotpink;
+    margin: 20px auto;
+}
