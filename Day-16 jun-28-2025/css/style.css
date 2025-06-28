@@ -3,3 +3,64 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.transform {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.translate, .skew, .scale, .rotate {
+    width: 200px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.translate:hover {
+    transform: translate(50px, 50px);
+}
+
+.scale:hover {
+    transform: scale(1.2);
+}
+
+.rotate:hover {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+}
+
+@media (max-width: 680px) {
+    .translate, .skew, .scale, .rotate {
+        background: orange;
+    }
+}
+
+@media (min-width: 680px) and (max-width: 1100px) {
+    .translate, .skew, .scale, .rotate {
+        background: hotpink;
+    }
+}
+
+@media (min-width: 1100px) {
+    .translate, .skew, .scale, .rotate {
+        background: green;
+    }
+}
+
+.skew {
+    animation: mySkew 0.5s infinite;
+}
+
+@keyframes mySkew {
+    0%{
+        transform: skew(-10deg, -10deg);
+    }
+    50%{
+        transform: skew(10deg, 10deg);
+    }
+    100%{
+        transform: skew(-10deg, -10deg);
+    }
+}
