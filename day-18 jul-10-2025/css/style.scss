@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    width: 1200px;
+    margin: 86px auto 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >a {
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: #3a3a3a;
+    }
+
+    >ul {
+        list-style: none;
+        display: flex;
+
+        >li {
+            &:not(:last-child) {
+                margin-right: 34px;
+            }
+
+            >a {
+                text-decoration: none;
+                color: #3a3a3a;
+            }
+        }
+    }
+}
+
+.hero {
+    width: 1200px;
+    margin: 0 auto 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >div {
+        >h1 {
+            font-weight: bold;
+            font-size: 52px;
+            width: 582px;
+            line-height: 70px;
+            color: #3A3A3A;
+        }
+
+        >p {
+            font-weight: 600px;
+            color: #3A3A3A;
+            width: 505px;
+            margin: 16px 0;
+        }
+
+        >button {
+            background: #E02C6D;
+            width: 196px;
+            height: 44px;
+            border-radius: 41px;
+            font-weight: bold;
+            color: #fff;
+            border-width: 0;
+        }
+
+        &:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("../images/banner-bg.png") no-repeat center center /contain;
+        }
+    }
+}
+
+.client {
+    width: 1200px;
+    margin: 0 auto 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 62px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right,
+                rgba(192, 204, 218, 0.1),
+                rgba(192, 204, 218, 0.6),
+                rgba(192, 204, 218, 0.1));
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(to right,
+                rgba(192, 204, 218, 0.1),
+                rgba(192, 204, 218, 0.6),
+                rgba(192, 204, 218, 0.1));
+    }
+}
