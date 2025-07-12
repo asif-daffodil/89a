@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paraColor : #300;
+
+@mixin childCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abul {
+    color: $paraColor;
+    padding: 20px;
+}
+
+.babul {
+    color: $paraColor;
+    padding: 20px;
+}
+
+.main {
+    width: 200px;
+    height: 200px;
+    background: red;
+    margin: auto;
+    @include childCenter;
+    .pain, .rain, .train, .chain, .kane {
+    width: 70%;
+    height: 70%;
+    background: blue;
+    @include childCenter;
+        >.rain {
+            background: red;
+            >.train{
+                >.chain{
+                    background: red;
+                }
+            }
+        }
+    }
+}
