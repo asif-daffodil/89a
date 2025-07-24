@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation Bar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <ul class="container mx-auto flex bg-blue-600">
+        <li class="w-full">
+            <a href="" class="text-white block text-center leading-[50px] hover:bg-blue-900">Home</a>
+        </li>
+        <li class="w-full relative group">
+            <a href=""
+                class="text-white block text-center leading-[50px] hover:bg-blue-900 flex gap-2 justify-center group">About
+                <div class="transition-all duration-300 ease-linear rotate-0 group-hover:rotate-180"><i
+                        class="fa-solid fa-angle-down"></i></div>
+            </a>
+            <ul class="absolute top-[150px] left-1/2 transition-all duration-300 ease-linear bg-blue-600 -translate-x-1/2 min-w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full">
+                <li><a href="" class="text-white text-center block leading-[50px] hover:bg-blue-800 px-5">Our Team</a></li>
+                <li><a href="" class="text-white text-center block leading-[50px] hover:bg-blue-800 px-5">Our History</a></li>
+                <li><a href="" class="text-white text-center block leading-[50px] hover:bg-blue-800 px-5">Our Motivation</a></li>
+            </ul>
+        </li>
+        <li class="w-full">
+            <a href="" class="text-white block text-center leading-[50px] hover:bg-blue-900">Contact</a>
+        </li>
+        <li class="w-full">
+            <a href="" class="text-white block text-center leading-[50px] hover:bg-blue-900">Blog</a>
+        </li>
+        <li class="w-full">
+            <a href="" class="text-white block text-center leading-[50px] hover:bg-blue-900">Services</a>
+        </li>
+    </ul>
+</body>
+
+</html>
