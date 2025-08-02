@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="hw">Bangladesh</div>
+    <button onclick="clickFunc()">Click Me</button>
+    <div id="dhaka">Dhaka is the capital of Bangladesh!</div>
+    <button onclick="changeDhaka()">Change Dhaka</button>
+    
+    <script>
+        document.write("Hello World");
+        const myFunc = () => {
+            return "Ami vaat khai";
+        }
+        document.getElementById("hw").innerHTML = myFunc();
+        /*
+        function myFunc () {
+            return "Ami vaat khai";
+        }
+        */
+
+        const clickFunc = () => {
+            alert("ha ha ha");
+        }
+
+        const changeDhaka = () => {
+            document.getElementById("dhaka").innerHTML = "Dhaka is a crowded city!"
+        }
+        
+    </script>
+</body>
+</html>
