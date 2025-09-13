@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center">
+        <div class="border rounded shadow p-4 min-w-xl">
+            <h1 class="text-2xl font-bold mb-4">To-do List</h1>
+            <form action="" class="mb-3" id="todoForm">
+                <div class="flex">
+                    <input type="text" placeholder="Your Task" class="w-full border p-2 rounded-l-md" name="task">
+                    <button class="border border-black px-5 rounded-r-md w-max flex-shrink-0 border-l-0 cursor-pointer font-bold hover:bg-blue-600 hover:text-white">Add Task</button>
+                </div>
+            </form>
+            <ul class="list-decimal list-inside grid gap-1 grid-cols-1" id="taskList">
+                
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const todoForm = document.getElementById("todoForm");
+        const taskList = document.getElementById("taskList");
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        todoForm.addEventListener("submit", e => {
+            e.preventDefault();
+            const formData = new FormData(todoForm);
+            const task = formData.get("task");
+            const li = document.createElement("li");
+            li.classList.add("italic");
+            const span = document.createElement("span");
+            span.className = "mr-2";
+            span.textContent = task;
+            const button1 = document.createElement("button");
+            button1.className = "bg-green-600 rounded-sm aspect-square p-1 text-white cursor-pointer mr-1 button1";
+            button1.innerHTML = '<i class="fa-solid fa-check"></i>';
+            const button2 = document.createElement("button");
+            button2.className = "bg-red-600 rounded-sm aspect-square p-1 text-white cursor-pointer button2";
+            button2.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            todoForm.reset();
+            li.append(span);
+            li.append(button1);
+            li.append(button2);
+            taskList.append(li);
+
+            // Get list items from local storage if any
+            const newTask = { text: task, completed: false };
+            tasks.push(newTask);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        })
+
+        taskList.addEventListener("click", e => {
+            if(e.target.closest(".button1")){
+                const button = e.target.closest(".button1");
+                button.classList.toggle("bg-green-600");
+                button.classList.toggle("bg-gray-600");
+                const li = e.target.closest("li");
+                li.classList.toggle("line-through");
+                li.classList.toggle("not-italic");
+                li.classList.toggle("text-gray-400");
+                const taskIndex = tasks.findIndex(t => t.text === task);
+                if (taskIndex !== -1) {
+                    tasks[taskIndex].completed = !tasks[taskIndex].completed;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                }
+            }
+            if(e.target.closest(".button2")){
+                const li = e.target.closest("li");
+                li.remove();
+                const taskText = li.querySelector("span").textContent;
+                tasks = tasks.filter(t => t.text !== taskText);
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+            }
+        })
+
+        // Load tasks from local storage on page load
+        window.addEventListener("load", () => {
+            tasks.forEach(task => {
+                const li = document.createElement("li");
+                li.classList.add("italic");
+                if (task.completed) {
+                    li.classList.add("line-through", "not-italic", "text-gray-400");
+                }
+                const span = document.createElement("span");
+                span.className = "mr-2";
+                span.textContent = task.text;
+                const button1 = document.createElement("button");
+                button1.className = `rounded-sm aspect-square p-1 text-white cursor-pointer mr-1 button1 ${task.completed ? 'bg-gray-600' : 'bg-green-600'}`;
+                button1.innerHTML = '<i class="fa-solid fa-check"></i>';
+                const button2 = document.createElement("button");
+                button2.className = "bg-red-600 rounded-sm aspect-square p-1 text-white cursor-pointer button2";
+                button2.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                li.append(span);
+                li.append(button1);
+                li.append(button2);
+                taskList.append(li);
+            });
+        });
+    </script>
+  </body>
+</html>
